@@ -3,6 +3,7 @@ import React from "react";
 import "./App.css";
 import ClockList from "./component/ClockList";
 import Form from "./component/Form";
+import CalculateTemperature from "./component/CalculateTemperature"; 
 
 function App() {
 	//console.log("App Rendered");
@@ -10,6 +11,7 @@ function App() {
 		<div className="App">
 			<ClockList quantities={[1, 2, 3]} />
 			<Form />
+	<CalculateTemperature />
 		</div>
 	);
 }
