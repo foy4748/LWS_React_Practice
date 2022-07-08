@@ -11,6 +11,7 @@ import TEXT from "./component/inheritance/Text";
 //Composition
 import TextComp from "./component/composition/Text";
 import EmojiComp from "./component/composition/Emoji";
+import BracketComp from "./component/composition/Bracket";
 
 
 function App() {
@@ -22,7 +23,11 @@ function App() {
 			<CalculateTemperature />
 			<TEXT />
 			<EmojiComp>
-				{({addEmoji}) => <TextComp addEmoji={addEmoji} />}
+				{({addEmoji}) =>
+					<BracketComp>
+						{({addBracket}) => <TextComp addEmoji={addEmoji} addBracket={addBracket} />}
+					</BracketComp>
+				}
 			</EmojiComp>
 		</div>
 	);
