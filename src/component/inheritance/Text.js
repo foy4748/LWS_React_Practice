@@ -7,7 +7,7 @@ class TEXT extends Emoji {
 	}
 
 	render() {
-		let decoratedText = this.addEmoji("Fart out Loud", "🔥🔥");
+		let decoratedText = this.addEmoji("I am JavaScript (Inheritance)", "🔥🔥");
 		return super.render(decoratedText);
 	}
 }
