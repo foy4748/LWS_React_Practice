@@ -13,6 +13,9 @@ import TextComp from "./component/composition/Text";
 import EmojiComp from "./component/composition/Emoji";
 import BracketComp from "./component/composition/Bracket";
 
+//Learning HOC
+import Counter from "./component/Counter";
+import DoubleTapCounter from "./component/DoubleTapCount";
 
 function App() {
 	//console.log("App Rendered");
@@ -29,6 +32,8 @@ function App() {
 					</BracketComp>
 				}
 			</EmojiComp>
+			<Counter />
+			<DoubleTapCounter />
 		</div>
 	);
 }
