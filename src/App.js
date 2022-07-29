@@ -20,6 +20,9 @@ import DoubleTapCounter from "./component/DoubleTapCount";
 //Drilling Props
 import Dril01 from "./component/Dril01";
 
+//For Context API
+import themeContext from "./context/themeContext";
+
 function App() {
   //console.log("App Rendered");
   return (
@@ -39,7 +42,10 @@ function App() {
       </EmojiComp>
       <Counter />
       <DoubleTapCounter />
-      <Dril01 load={"How my fart smells? Eh?"} theme={{ theme: "dark" }} />
+      {/*<Dril01 load={"How my fart smells? Eh?"} theme={{ theme: "dark" }} />*/}
+      <themeContext.Provider value={{ theme: "dark" }}>
+        <Dril01 />
+      </themeContext.Provider>
     </div>
   );
 }
