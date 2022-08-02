@@ -23,6 +23,9 @@ import Dril01 from "./component/Dril01";
 //For Context API
 import themeContext from "./context/themeContext";
 
+//useState Example
+import StateHook from "./component/StateHook";
+
 function App() {
   //console.log("App Rendered");
   return (
@@ -46,6 +49,8 @@ function App() {
       <themeContext.Provider value={{ theme: "dark" }}>
         <Dril01 />
       </themeContext.Provider>
+
+      <StateHook />
     </div>
   );
 }
