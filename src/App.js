@@ -26,10 +26,14 @@ import themeContext from "./context/themeContext";
 //useState Example
 import StateHook from "./component/StateHook";
 
+//useEffect Example
+import EffectHook from "./component/EffectHook";
+
 function App() {
   //console.log("App Rendered");
   return (
     <div className="App">
+      <EffectHook />
       <ClockList quantities={[1, 2, 3]} />
       <Form />
       <CalculateTemperature />
