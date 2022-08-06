@@ -29,11 +29,21 @@ import StateHook from "./component/StateHook";
 //useEffect Example
 import EffectHook from "./component/EffectHook";
 
+//useRef Example
+import RefHook from "./component/RefHook";
+
+//useReducer Example
+import ReducerHook from "./component/ReducerHook";
+
 function App() {
   //console.log("App Rendered");
   return (
     <div className="App">
       <EffectHook />
+      <RefHook />
+
+      <ReducerHook />
+
       <ClockList quantities={[1, 2, 3]} />
       <Form />
       <CalculateTemperature />
