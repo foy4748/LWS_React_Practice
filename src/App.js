@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //import logo from "./logo.svg";
 import "./App.css";
 import ClockList from "./component/ClockList";
@@ -35,36 +36,58 @@ import RefHook from "./component/RefHook";
 //useReducer Example
 import ReducerHook from "./component/ReducerHook";
 
+//Importing Navbar
+import Navbar from "./component/Navbar";
+
 function App() {
   //console.log("App Rendered");
   return (
     <div className="App">
-      <EffectHook />
-      <RefHook />
-
-      <ReducerHook />
-
-      <ClockList quantities={[1, 2, 3]} />
-      <Form />
-      <CalculateTemperature />
-      <TEXT />
-      <EmojiComp>
-        {({ addEmoji }) => (
-          <BracketComp>
-            {({ addBracket }) => (
-              <TextComp addEmoji={addEmoji} addBracket={addBracket} />
-            )}
-          </BracketComp>
-        )}
-      </EmojiComp>
-      <Counter />
-      <DoubleTapCounter />
-      {/*<Dril01 load={"How my fart smells? Eh?"} theme={{ theme: "dark" }} />*/}
-      <themeContext.Provider value={{ theme: "dark" }}>
-        <Dril01 />
-      </themeContext.Provider>
-
-      <StateHook />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ClockList quantities={[1, 2, 3]} />} />
+          <Route path="/cat-fact" element={<EffectHook />} />
+          <Route path="/form" element={<RefHook />}>
+            <Route path="form2" element={<Form />} />
+          </Route>
+          <Route
+            path="/emoji"
+            element={
+              <EmojiComp>
+                {({ addEmoji }) => (
+                  <BracketComp>
+                    {({ addBracket }) => (
+                      <TextComp addEmoji={addEmoji} addBracket={addBracket} />
+                    )}
+                  </BracketComp>
+                )}
+              </EmojiComp>
+            }
+          />
+          <Route path="/reducer-hook" element={<ReducerHook />} />
+          <Route path="/temperature" element={<CalculateTemperature />} />
+          <Route path="/text" element={<TEXT />} />
+          <Route
+            path="/counters"
+            element={
+              <>
+                <Counter /> <DoubleTapCounter />
+              </>
+            }
+          />
+          <Route
+            path="/context-api"
+            element={
+              <themeContext.Provider value={{ theme: "dark" }}>
+                {/*<Dril01 load={"How my fart smells? Eh?"} theme={{ theme: "dark" }} />*/}
+                <Dril01 />
+              </themeContext.Provider>
+            }
+          />
+          <Route path="/state-hook" element={<StateHook />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

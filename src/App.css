@@ -28,6 +28,27 @@
   color: #61dafb;
 }
 
+/* Custom Global CSS */
+nav {
+  margin-bottom: 4rem;
+}
+
+nav > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0.5rem;
+}
+
+li:visited {
+  color: white;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

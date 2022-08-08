@@ -1,4 +1,5 @@
 import { useRef, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 import Input from "./Input";
 
 export default function RefHook() {
@@ -20,6 +21,7 @@ export default function RefHook() {
           />
         </label>
       </form>
+      <Outlet />
     </div>
   );
   /* ref is a special props only can be sent via React.reft */
